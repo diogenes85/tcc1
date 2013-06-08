@@ -10,6 +10,6 @@ package model.util;
  */
 public enum TipoExercicios {
     
-    SUPINORETO, ROSCA, TRICEPS, ABDOMINAL;
+    Supino, Rosca, Triceps, Abdominal;
     
 }

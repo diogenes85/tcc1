@@ -6,11 +6,14 @@ package model.persistense;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import model.util.TipoExercicios;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.Fetch;
@@ -27,9 +30,10 @@ public class Ficha implements Serializable {
     @Id
     @GeneratedValue
     private int idFicha;
-    private String tipo;
+    @Enumerated(EnumType.STRING)
+    private TipoExercicios tipo;
     private int repeticao;
-    private String exercicio;
+    private String aparelho;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="id_cliente")
@@ -52,13 +56,15 @@ public class Ficha implements Serializable {
         this.idFicha = idFicha;
     }
 
-    public String getTipo() {
+    public TipoExercicios getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
+    public void setTipo(TipoExercicios tipo) {
         this.tipo = tipo;
     }
+
+  
 
     public int getRepeticao() {
         return repeticao;
@@ -68,13 +74,15 @@ public class Ficha implements Serializable {
         this.repeticao = repeticao;
     }
 
-    public String getExercicio() {
-        return exercicio;
+    public String getAparelho() {
+        return aparelho;
     }
 
-    public void setExercicio(String exercicio) {
-        this.exercicio = exercicio;
+    public void setAparelho(String aparelho) {
+        this.aparelho = aparelho;
     }
+
+
 
     public Cliente getCliente() {
         return cliente;

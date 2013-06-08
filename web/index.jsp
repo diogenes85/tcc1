@@ -10,7 +10,7 @@
 
 <!DOCTYPE html>
 <html>
-    <body bgcolor="#ccffff">
+    <body bgcolor="">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>B-Health</title>
@@ -20,9 +20,11 @@
     </head>
     <body>
         <h4>
-          <a href="cadastrapessoa.jsp">Cadastrar Pessoa</a><br><br>
-          <a href="cadastraficha.jsp">Cadastrar Ficha</a><br>
-<%--      <a href="listafuncionario.do">lista Funcionario </a><br>  --%>
+<%--          <a href="cadastrapessoa.jsp">Cadastrar Pessoa</a><br><br>
+          <a href="cadastraficha.jsp">Cadastrar Ficha</a><br> --%>
+      <a href="listaTipos.do">Cadastrar Ficha</a><br>
+      <a href="listafichas.do">Listar Fichas</a><br>
+      
               
         </h4>
     </body>

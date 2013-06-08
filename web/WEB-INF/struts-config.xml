@@ -4,16 +4,18 @@
           "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
           "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
 
-
 <struts-config>
     <global-exceptions> </global-exceptions>
     <global-forwards> </global-forwards>
     
-<!-- ////////////////////////////  -->
+              <!--    BEANS    -->
     <form-beans>
-                <form-bean name="formCadastraPessoa" type="controller.forms.CadastraPessoaForm"/> 
+                <form-bean name="formCadastraPessoa" type="controller.forms.CadastraPessoaForm"/>
+                <form-bean name="formCadastraFicha" type="controller.forms.CadastraFichaForm"/> 
     </form-beans>
-<!-- ////////////////////////////  -->
+              <!--    BEANS    -->
+
+
 
     <action-mappings>
         
@@ -22,9 +24,55 @@
            scope="request"
            input="/cadastrapessoa.jsp">
            <forward name="success" path="/index.jsp"/>
-            <forward name="senhaincorreta" path="/senhaerrada.jsp"/>
            <forward name="error" path="/error.jsp"/>
-</action>  
+</action>
+
+               <!-- CADASTRA FICHA  -->
+<action path="/cadastraficha" type="controller.actions.CadastraFichaAction" name="formCadastraFicha"
+           scope="request"
+           input="/cadastraficha.jsp">
+           <forward name="success" path="/sucesso.jsp"/>
+           <forward name="error" path="/erro.jsp"/>
+</action>    
+
+           <!-- LISTA TIPOS  -->
+<action path="/listaTipos"
+           type="controller.actions.ListaTipoExercicioAction"
+           scope="request">
+           <forward name="Alter" path="/formAlteraPessoa.jsp" />
+           <forward name="sucesso" path="/cadastraficha.jsp" />
+           <forward name="error" path="/erro.jsp" />
+</action>        
+        
+            <!-- LISTA FICHAS  -->        
+<action path="/listafichas" type="controller.actions.ListaFichasAction" >
+            <forward name="lista" path="/listafichas.jsp"/>
+            <forward name="error" path="/erro.jsp"/>
+</action>
+
+            <!-- EXCLUIR PESSOA  -->  
+<action path="/excluirficha" type="controller.actions.ExcluirFichaAction"
+           name="formCadastraFicha" >
+           <forward name="sucesso" path="/sucesso.jsp"/>
+           <forward name="error" path="/erro.jsp"/>
+</action>
+                              
+           <!-- BUSCA FICHA  -->
+<action path="/buscaficha" type="controller.actions.BuscaFichaAction"
+           name="formCadastraFicha" > 
+           <forward name="sucesso" path="/formAlteraFicha.jsp"/>
+           <forward name="error" path="/erro.jsp"/>
+</action>        
+        
+        
+            <!-- ALTERA FICHA  -->
+<action path="/alteraficha" type="controller.actions.AlteraFichaAction"
+           name="formCadastraFicha" > 
+           <forward name="sucesso" path="/sucesso.jsp"/>
+           <forward name="error" path="/erro.jsp"/>
+</action>       
+        
+        
         
     </action-mappings>
     

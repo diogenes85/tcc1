@@ -20,6 +20,15 @@ public class Exercicio extends Ficha{
     private int idExercicio;
     
     
+    public int getIdExercicio() {
+        return idExercicio;
+    }
+
+    public void setIdExercicio(int idExercicio) {
+        this.idExercicio = idExercicio;
+    }
+    
+    
     
     
     

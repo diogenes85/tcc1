@@ -18,9 +18,9 @@ public class TesteCadastraFicha {
     {
     
         Ficha ficha = new Ficha();
-        ficha.setTipo("Musculacao");
+       // ficha.setTipo("Musculacao");
         ficha.setRepeticao(3);
-        ficha.setExercicio("Barra Peitoral");
+    //    ficha.setExercicio("Barra Peitoral");
         
         IDAO dao = new HDAO();
         

@@ -14,14 +14,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>B-Health</title>
-        <script> </script>
+            <script>
+            var redirecturl="index.jsp"
+            var pausefor=3
+            function postaction(){ 
+            if (window.timer){
+            clearInterval(timer)
+            clearInterval(timer_2)
+            }
+            window.location=redirecturl
+            }
+            setTimeout("postaction()",pausefor*1000)
+
+        </script>
 <p><img src="topo.png" width="980" height="150" align="center"></p>
         <h3>
     </head>
     <body>
         <h4>
-          Sua operação foi concluída com sucesso!
-          <a href="index.jsp">Voltar a página inicial.</a><br><br>
+          SUCESSO !!!<br>
+          Você será redirecionado em instantes.<br><br>
           
 <%--      <a href="listafuncionario.do">lista Funcionario </a><br>  --%>
               

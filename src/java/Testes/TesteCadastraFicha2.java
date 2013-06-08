@@ -33,8 +33,8 @@ public class TesteCadastraFicha2 {
         List<Ficha> fichas = new ArrayList<Ficha>();
 
         Ficha ficha = new Ficha();
-        ficha.setTipo("Aerobica");
-        ficha.setExercicio("Musculação");
+   //     ficha.setTipo("Aerobica");
+        ficha.setAparelho("Musculação");
         ficha.setRepeticao(10);
 
         fichas.add(ficha);
@@ -49,7 +49,7 @@ public class TesteCadastraFicha2 {
         System.out.println("----------------Fichas---------------");
         for (int i = 0; i < cliente.getFichas().size(); i++) {
             System.out.println("Tipo:" + cliente.getFichas().get(i).getTipo());
-            System.out.println("Exercicio:" + cliente.getFichas().get(i).getExercicio());
+  //          System.out.println("Exercicio:" + cliente.getFichas().get(i).getExercicio());
         }
         System.out.println("-------------------------------------");
 
